@@ -24,6 +24,7 @@ export class FlowerCardEditor extends EditorForm {
             { controls: [{ label: "Display Type", configValue: "display_type", type: FormControlType.Radio, items: [
                 { label: 'Full', value: DisplayType.Full },
                 { label: 'Compact', value: DisplayType.Compact },
+                { label: 'Overview', value: DisplayType.Overview },
             ] }] },
             { controls: [{ label: "Entity", configValue: "entity", type: FormControlType.Dropdown, items: plantsList }] },
             { controls: [{ label: "Battery Sensor", configValue: "battery_sensor", type: FormControlType.Dropdown, items: batteryList }] },

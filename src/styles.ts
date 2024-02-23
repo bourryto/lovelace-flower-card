@@ -36,7 +36,14 @@ export const style = css`
   padding-top: 4px;
   height: 55px;
 }
-.attribute .header, .attribute .header-compact {
+.header-overview {
+    padding-top: 4px;
+    height: 120px;
+    width: 120px;
+}
+    
+    
+.attribute .header, .attribute .header-compact{
   height: auto;
   padding-top: 0px;
 }
@@ -62,6 +69,17 @@ export const style = css`
   margin-top: 0px;
   float: left;
   box-shadow: var( --ha-card-box-shadow, 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) );
+} 
+.header-overview > img {
+    border-radius: 100%;
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px;
+    float: left;
+    box-shadow: var( --ha-card-box-shadow, 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) );
 }
 .header > #name {
   font-weight: bold;

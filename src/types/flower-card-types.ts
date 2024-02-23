@@ -9,7 +9,8 @@ export interface FlowerCardConfig extends LovelaceCardConfig {
 
 export enum DisplayType {
     Full = "full",
-    Compact = "compact"
+    Compact = "compact",
+    Overview = "overview"
 }
 
 export interface HomeAssistantEntity extends HassEntity {

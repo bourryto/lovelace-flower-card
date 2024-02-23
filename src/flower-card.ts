@@ -86,8 +86,37 @@ export default class FlowerCard extends LitElement {
         }
 
         const species = this.stateObj.attributes.species;
-        const headerCssClass = this.config.display_type === DisplayType.Compact ? "header-compact" : "header";
-        const haCardCssClass = this.config.display_type === DisplayType.Compact ? "" : "card-margin-top";
+        let headerTmp = "header";
+        let cardTmp = "";
+        switch ( this.config.display_type ) {
+            case DisplayType.Compact:
+                headerTmp = "header-compact";
+                cardTmp = "";
+                break;
+            case DisplayType.Overview:
+                headerTmp = "header-overview"; // TODO add contnt
+                cardTmp = "card-header"; // TODO add contnt later
+                break;
+            default:
+                cardTmp = "card-margin-top";
+                break;
+        }
+        const headerCssClass = headerTmp;
+        const haCardCssClass = cardTmp;
+
+        if (this.config.display_type === DisplayType.Overview) {
+            return html`
+                <ha-card class="${haCardCssClass}">
+                    <div class="${headerCssClass}" @click="${() => 
+                        moreInfo(this, this.stateObj.entity_id)}">
+                        <img src="${this.stateObj.attributes.entity_picture
+                                ? this.stateObj.attributes.entity_picture
+                                : missingImage
+                        }">
+                    </div>
+                </ha-card>
+            `;
+        }
 
         return html`
             <ha-card class="${haCardCssClass}">
