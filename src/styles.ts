@@ -48,6 +48,7 @@ export const style = css`
     border-radius: 100%;
     box-sizing: border-box;
     padding: 10px;
+    border-color: orange;
 }
     
 .attribute .header, .attribute .header-compact{
@@ -77,7 +78,7 @@ export const style = css`
   float: left;
   box-shadow: var( --ha-card-box-shadow, 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) );
 }
-.status-ring > img {
+.header-overview > .status-ring > img {
     border-radius: 100%;
     border-color: aqua;
     border-style: dashed;

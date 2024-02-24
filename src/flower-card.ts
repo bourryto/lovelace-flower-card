@@ -106,15 +106,12 @@ export default class FlowerCard extends LitElement {
 
         if (this.config.display_type === DisplayType.Overview) {
             //const statusColor = getStatus(this); // TODO this breaks the code, figure out why <3
+            // TODO add image again later
             return html`
                 <ha-card class="${haCardCssClass}">
                     <div class="${headerCssClass}" @click="${() => 
                         moreInfo(this, this.stateObj.entity_id)}">
                         <div class="status-ring" style="background-color: red">
-                            <img src="${this.stateObj.attributes.entity_picture
-                                    ? this.stateObj.attributes.entity_picture
-                                    : missingImage
-                            }">
                         </div>
                     </div>
                 </ha-card>

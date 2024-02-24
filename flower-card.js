@@ -105,7 +105,6 @@
                 <ha-card class="${r}">
                     <div class="${i}" @click="${()=>(0,d.moreInfo)(this,this.stateObj.entity_id)}">
                         <div class="status-ring" style="background-color: red">
-                            <img src="${this.stateObj.attributes.entity_picture?this.stateObj.attributes.entity_picture:u.missingImage}">
                         </div>
                     </div>
                 </ha-card>
