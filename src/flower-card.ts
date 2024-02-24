@@ -105,7 +105,7 @@ export default class FlowerCard extends LitElement {
         const haCardCssClass = cardTmp;
 
         if (this.config.display_type === DisplayType.Overview) {
-            const statusColor = getStatus(this);
+            //const statusColor = getStatus(this);
             return html`
                 <ha-card class="${haCardCssClass}">
                     <div class="${headerCssClass}" @click="${() => 
