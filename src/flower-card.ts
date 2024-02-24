@@ -3,7 +3,7 @@ import { HomeAssistant, LovelaceCardEditor } from 'custom-card-helpers';
 import { style } from './styles';
 import { DisplayType, FlowerCardConfig, HomeAssistantEntity, PlantInfo } from './types/flower-card-types';
 import * as packageJson from '../package.json';
-import { renderAttributes, renderBattery } from './utils/attributes';
+import {getStatus, renderAttributes, renderBattery} from './utils/attributes';
 import { CARD_EDITOR_NAME, CARD_NAME, default_show_bars, missingImage } from './utils/constants';
 import { moreInfo } from './utils/utils';
 
@@ -94,8 +94,8 @@ export default class FlowerCard extends LitElement {
                 cardTmp = "";
                 break;
             case DisplayType.Overview:
-                headerTmp = "header-overview"; // TODO add contnt
-                cardTmp = "card-header"; // TODO add contnt later
+                headerTmp = "header-overview";
+                cardTmp = "card-overview";
                 break;
             default:
                 cardTmp = "card-margin-top";
@@ -105,14 +105,17 @@ export default class FlowerCard extends LitElement {
         const haCardCssClass = cardTmp;
 
         if (this.config.display_type === DisplayType.Overview) {
+            const statusColor = getStatus(this);
             return html`
                 <ha-card class="${haCardCssClass}">
                     <div class="${headerCssClass}" @click="${() => 
                         moreInfo(this, this.stateObj.entity_id)}">
-                        <img src="${this.stateObj.attributes.entity_picture
-                                ? this.stateObj.attributes.entity_picture
-                                : missingImage
-                        }">
+                        <div class="statusRing" style="background-color: ${statusColor}">
+                            <img src="${this.stateObj.attributes.entity_picture
+                                    ? this.stateObj.attributes.entity_picture
+                                    : missingImage
+                            }">
+                        </div>
                     </div>
                 </ha-card>
             `;
@@ -153,6 +156,9 @@ export default class FlowerCard extends LitElement {
     }
 
     getCardSize(): number {
+        if (this.config.display_type === DisplayType.Overview) {
+            return 1;
+        }
         return 5;
     }
 

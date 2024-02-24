@@ -1,5 +1,14 @@
 import { HomeAssistant } from "custom-card-helpers";
-import { DisplayType, DisplayedAttribute, DisplayedAttributes, FlowerCardConfig, Icons, Limits, UOM, UOMT } from "../types/flower-card-types";
+import {
+    DisplayType,
+    DisplayedAttribute,
+    DisplayedAttributes,
+    FlowerCardConfig,
+    Icons,
+    Limits,
+    UOM,
+    UOMT
+} from "../types/flower-card-types";
 import { TemplateResult, html } from "lit-element";
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { default_show_bars } from "./constants";
@@ -37,6 +46,29 @@ export const renderBattery = (config: FlowerCardConfig, hass: HomeAssistant) => 
         </div>
     `;
 }
+export const getStatus = (card: FlowerCard) => {
+    const monitored = card.config.show_bars || default_show_bars;
+
+    if (card.plantinfo && card.plantinfo.result) {
+        const result = card.plantinfo.result;
+        let allOk = true;
+        for (const elem of monitored) {
+            if (result[elem]) {
+                let { max, min, current, icon, sensor, unit_of_measurement } = result[elem];
+                max = Number(max);
+                min = Number(min);
+                current = Number(current);
+                if (current < min || current > max) {
+                    allOk = false;
+                    break;
+                }
+                // TODO LATER: i think dli is not tracked yet, do that later
+            }
+        }
+        return allOk ? "green" : "red";
+    }
+}
+
 export const renderAttributes = (card: FlowerCard): TemplateResult[] => {
     const icons: Icons = {};
     const uom: UOM = {};

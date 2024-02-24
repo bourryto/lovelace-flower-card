@@ -38,10 +38,25 @@ export const style = css`
 }
 .header-overview {
     padding-top: 4px;
-    height: 120px;
-    width: 120px;
+    height: 104px;
+    width: 100px;
 }
     
+.statusRing{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    
+}
+.red{
+    background-color: red;
+    border-color: darkred;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 100%;
+}
     
 .attribute .header, .attribute .header-compact{
   height: auto;
@@ -69,16 +84,11 @@ export const style = css`
   margin-top: 0px;
   float: left;
   box-shadow: var( --ha-card-box-shadow, 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) );
-} 
-.header-overview > img {
+}
+.header-overview > .statusRing > img {
     border-radius: 100%;
-    width: 88px;
-    height: 88px;
-    object-fit: cover;
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-top: 16px;
-    float: left;
+    width: 80px;
+    height: 80px;
     box-shadow: var( --ha-card-box-shadow, 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) );
 }
 .header > #name {
@@ -189,7 +199,7 @@ export const style = css`
   -webkit-transform: translateX(-50%) translateY(-200%);
           transform: translateX(-50%) translateY(-200%);
 }
-.width-100 {
+.width-100 { // only used for attributes, can ignore for header and others
   width: 100%;    
   margin-bottom: 3px;
   margin-right: 5px;

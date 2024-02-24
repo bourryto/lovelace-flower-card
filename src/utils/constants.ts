@@ -1,6 +1,6 @@
 import { DropdownOption } from "@marcokreeft/ha-editor-formbuilder/dist/interfaces";
 
-export const CARD_NAME = "flower-card";
+export const CARD_NAME = "flower-card-overview";
 export const CARD_EDITOR_NAME = `${CARD_NAME}-editor`;
 
 export const default_show_bars = [
