@@ -42,7 +42,7 @@ export const style = css`
     width: 100px;
 }
     
-.statusRing{
+.status-ring{
     height: 100px;
     width: 100px;
     border-radius: 100%;
@@ -77,7 +77,7 @@ export const style = css`
   float: left;
   box-shadow: var( --ha-card-box-shadow, 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) );
 }
-.statusRing > img {
+.status-ring > img {
     border-radius: 100%;
     border-color: aqua;
     border-style: dashed;
