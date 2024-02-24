@@ -101,15 +101,16 @@
                 <hui-warning>
                 Entity not available: ${this.config.entity}
                 </hui-warning>
-              `;const t=this.stateObj.attributes.species;let e="header",n="";switch(this.config.display_type){case s.DisplayType.Compact:e="header-compact",n="";break;case s.DisplayType.Overview:e="header-overview",n="card-overview";break;default:n="card-margin-top"}const i=e,r=n;if(this.config.display_type===s.DisplayType.Overview){const t=(0,c.getStatus)(this);return o.html`
+              `;const t=this.stateObj.attributes.species;let e="header",n="";switch(this.config.display_type){case s.DisplayType.Compact:e="header-compact",n="";break;case s.DisplayType.Overview:e="header-overview",n="";break;default:n="card-margin-top"}const i=e,r=n;return this.config.display_type===s.DisplayType.Overview?((0,c.getStatus)(this),o.html`
                 <ha-card class="${r}">
                     <div class="${i}" @click="${()=>(0,d.moreInfo)(this,this.stateObj.entity_id)}">
-                        <div class="statusRing" style="background-color: ${t}">
+                        <div class="statusRing" style="background-color: red">
+                            <p>test</p>
                             <img src="${this.stateObj.attributes.entity_picture?this.stateObj.attributes.entity_picture:u.missingImage}">
                         </div>
                     </div>
                 </ha-card>
-            `}return o.html`
+            `):o.html`
             <ha-card class="${r}">
             <div class="${i}" @click="${()=>(0,d.moreInfo)(this,this.stateObj.entity_id)}">
                 <img src="${this.stateObj.attributes.entity_picture?this.stateObj.attributes.entity_picture:u.missingImage}">

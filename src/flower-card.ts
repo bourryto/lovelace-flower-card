@@ -95,7 +95,7 @@ export default class FlowerCard extends LitElement {
                 break;
             case DisplayType.Overview:
                 headerTmp = "header-overview";
-                cardTmp = "card-overview";
+                cardTmp = "";
                 break;
             default:
                 cardTmp = "card-margin-top";
@@ -110,7 +110,8 @@ export default class FlowerCard extends LitElement {
                 <ha-card class="${haCardCssClass}">
                     <div class="${headerCssClass}" @click="${() => 
                         moreInfo(this, this.stateObj.entity_id)}">
-                        <div class="statusRing" style="background-color: ${statusColor}">
+                        <div class="statusRing" style="background-color: red">
+                            <p>test</p>
                             <img src="${this.stateObj.attributes.entity_picture
                                     ? this.stateObj.attributes.entity_picture
                                     : missingImage

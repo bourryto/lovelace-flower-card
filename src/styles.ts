@@ -48,14 +48,6 @@ export const style = css`
     border-radius: 100%;
     box-sizing: border-box;
     padding: 10px;
-    
-}
-.red{
-    background-color: red;
-    border-color: darkred;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 100%;
 }
     
 .attribute .header, .attribute .header-compact{
