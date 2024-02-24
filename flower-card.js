@@ -103,8 +103,10 @@
                 </hui-warning>
               `;const t=this.stateObj.attributes.species;let e="header",n="";switch(this.config.display_type){case s.DisplayType.Compact:e="header-compact",n="";break;case s.DisplayType.Overview:e="header-overview",n="";break;default:n="card-margin-top"}const i=e,r=n;return this.config.display_type===s.DisplayType.Overview?o.html`
                 <ha-card class="${r}">
-                    <div class="status-ring" @click="${()=>(0,d.moreInfo)(this,this.stateObj.entity_id)}">
-                        <img src="${this.stateObj.attributes.entity_picture?this.stateObj.attributes.entity_picture:u.missingImage}">
+                    <div class="${i}" @click="${()=>(0,d.moreInfo)(this,this.stateObj.entity_id)}">
+                        <div class="status-ring" style="background-color: red">
+                            <img src="${this.stateObj.attributes.entity_picture?this.stateObj.attributes.entity_picture:u.missingImage}">
+                        </div>
                     </div>
                 </ha-card>
             `:o.html`

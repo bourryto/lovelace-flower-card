@@ -46,7 +46,6 @@ export const style = css`
     height: 100px;
     width: 100px;
     border-radius: 100%;
-    box-sizing: border-box;
     padding: 10px;
     border-color: orange;
 }
