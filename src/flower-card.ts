@@ -3,7 +3,7 @@ import { HomeAssistant, LovelaceCardEditor } from 'custom-card-helpers';
 import { style } from './styles';
 import { DisplayType, FlowerCardConfig, HomeAssistantEntity, PlantInfo } from './types/flower-card-types';
 import * as packageJson from '../package.json';
-import {getStatus, renderAttributes, renderBattery} from './utils/attributes';
+import {renderAttributes, renderBattery} from './utils/attributes';
 import { CARD_EDITOR_NAME, CARD_NAME, default_show_bars, missingImage } from './utils/constants';
 import { moreInfo } from './utils/utils';
 
@@ -157,9 +157,6 @@ export default class FlowerCard extends LitElement {
     }
 
     getCardSize(): number {
-        if (this.config.display_type === DisplayType.Overview) {
-            return 1;
-        }
         return 5;
     }
 

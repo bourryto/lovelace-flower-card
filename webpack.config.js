@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const compressionPlugin = require('compression-webpack-plugin');
-// TODO change name
+
 module.exports = {
     mode: 'production',
     entry: path.resolve(__dirname, 'src', 'flower-card.ts'),
