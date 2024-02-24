@@ -109,10 +109,12 @@ export default class FlowerCard extends LitElement {
             // TODO add image again later
             return html`
                 <ha-card class="${haCardCssClass}">
-                    <div class="${headerCssClass}" @click="${() => 
+                    <div class="status-ring" @click="${() => 
                         moreInfo(this, this.stateObj.entity_id)}">
-                        <div class="status-ring" style="background-color: red">
-                        </div>
+                        <img src="${this.stateObj.attributes.entity_picture
+                                ? this.stateObj.attributes.entity_picture
+                                : missingImage
+                        }">
                     </div>
                 </ha-card>
             `;
