@@ -26,4 +26,5 @@ export const moreInfo = (card: FlowerCard, entityId: string): void => {
         { entityId },
         { bubbles: false, composed: true }
     );
+    // TODO LATER: add message what is wrong?
 }

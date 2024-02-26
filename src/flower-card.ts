@@ -1,11 +1,11 @@
-import { CSSResult, HTMLTemplateResult, LitElement, customElement, html, property } from 'lit-element';
-import { HomeAssistant, LovelaceCardEditor } from 'custom-card-helpers';
-import { style } from './styles';
-import { DisplayType, FlowerCardConfig, HomeAssistantEntity, PlantInfo } from './types/flower-card-types';
+import {CSSResult, customElement, html, HTMLTemplateResult, LitElement, property} from 'lit-element';
+import {HomeAssistant, LovelaceCardEditor} from 'custom-card-helpers';
+import {style} from './styles';
+import {DisplayType, FlowerCardConfig, HomeAssistantEntity, PlantInfo} from './types/flower-card-types';
 import * as packageJson from '../package.json';
-import {renderAttributes, renderBattery} from './utils/attributes';
-import { CARD_EDITOR_NAME, CARD_NAME, default_show_bars, missingImage } from './utils/constants';
-import { moreInfo } from './utils/utils';
+import {getStatus, renderAttributes, renderBattery} from './utils/attributes';
+import {CARD_EDITOR_NAME, CARD_NAME, default_show_bars, missingImage} from './utils/constants';
+import {moreInfo} from './utils/utils';
 
 console.info(
     `%c FLOWER-CARD %c ${packageJson.version}`,
@@ -95,7 +95,7 @@ export default class FlowerCard extends LitElement {
                 break;
             case DisplayType.Overview:
                 headerTmp = "header-overview";
-                cardTmp = "";
+                cardTmp = "card-overview";
                 break;
             default:
                 cardTmp = "card-margin-top";
@@ -105,17 +105,17 @@ export default class FlowerCard extends LitElement {
         const haCardCssClass = cardTmp;
 
         if (this.config.display_type === DisplayType.Overview) {
-            //const statusColor = getStatus(this); // TODO this breaks the code, figure out why <3
-            // TODO add image again later
+            const statusColor = getStatus(this);
             return html`
                 <ha-card class="${haCardCssClass}">
                     <div class="${headerCssClass}" @click="${() => 
                         moreInfo(this, this.stateObj.entity_id)}">
-                        <div class="status-ring" style="background-color: red">
+                        <div class="status-ring" style="background-color: ${statusColor}">
                             <img src="${this.stateObj.attributes.entity_picture
                                     ? this.stateObj.attributes.entity_picture
                                     : missingImage
                             }">
+                            // TODO: add hover version telling you what is wrong in a single word
                         </div>
                     </div>
                 </ha-card>
@@ -157,6 +157,9 @@ export default class FlowerCard extends LitElement {
     }
 
     getCardSize(): number {
+        if(this.config.display_type == DisplayType.Overview){
+            return 1;
+        } // TODO: check if this actually makes it smaller
         return 5;
     }
 

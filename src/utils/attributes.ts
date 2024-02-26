@@ -63,6 +63,7 @@ export const getStatus = (card: FlowerCard) => {
                     break;
                 }
                 // TODO LATER: i think dli is not tracked yet, do that later
+                // TODO LATER: check if only chosen attributes are being checked
             }
         }
         return allOk ? "green" : "red";
