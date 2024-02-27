@@ -127,8 +127,9 @@
 }
 .card-overview {
     background-color: transparent;
-    height: 200px;
+    height: 100px;
     width: 100px;
+}
 .attributes {
   display: flex;
   white-space: nowrap;
@@ -202,9 +203,10 @@
 }
 .status-ring > img {
     border-radius: 100%;
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
+    margin: 10px;
     box-shadow: var( --ha-card-box-shadow, 0 0 2px 2px rgba(0, 0, 0, 0.14));
 }
 .header > #name {
