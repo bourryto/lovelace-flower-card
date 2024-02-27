@@ -6,6 +6,7 @@ export const style = css`
 }
 .card-overview {
     background-color: transparent;
+    border-style: none;
     height: 100px;
     width: 100px;
 }
