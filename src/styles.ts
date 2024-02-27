@@ -6,7 +6,7 @@ export const style = css`
 }
 .card-overview {
     background-color: transparent;
-    height: 100px;
+    height: 200px;
     width: 100px;
 .attributes {
   display: flex;
@@ -49,8 +49,7 @@ export const style = css`
     height: 100px;
     width: 100px;
     border-radius: 100%;
-    padding: 10px;
-    border-color: orange;
+    padding: 20px;
 }
     
 .attribute .header, .attribute .header-compact{
@@ -86,7 +85,7 @@ export const style = css`
     height: 90px;
     object-fit: cover;
     box-shadow: var( --ha-card-box-shadow, 0 0 2px 2px rgba(0, 0, 0, 0.14));
-} // TODO: check if box shadow is now all around
+}
 .header > #name {
   font-weight: bold;
   width: 100%;

@@ -156,9 +156,6 @@ export default class FlowerCard extends LitElement {
     }
 
     getCardSize(): number {
-        // if(this.config.display_type === DisplayType.Overview){
-        //    return 1;
-        //}
         return 5;
     }
 
