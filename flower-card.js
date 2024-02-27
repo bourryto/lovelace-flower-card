@@ -106,7 +106,6 @@
                     <div class="${r}" @click="${()=>(0,d.moreInfo)(this,this.stateObj.entity_id)}">
                         <div class="status-ring" style="background-color: ${t}">
                             <img src="${this.stateObj.attributes.entity_picture?this.stateObj.attributes.entity_picture:u.missingImage}">
-                            // TODO: add hover version telling you what is wrong in a single word
                         </div>
                     </div>
                 </ha-card>
@@ -128,7 +127,8 @@
 }
 .card-overview {
     background-color: transparent;
-} // TODO: check if it works
+    height: 100px;
+    width: 100px;
 .attributes {
   display: flex;
   white-space: nowrap;
@@ -162,8 +162,7 @@
   height: 55px;
 }
 .header-overview {
-    padding-top: 4px;
-    height: 104px;
+    height: 100px;
     width: 100px;
 }
     
@@ -204,8 +203,8 @@
 }
 .status-ring > img {
     border-radius: 100%;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
     box-shadow: var( --ha-card-box-shadow, 0 0 2px 2px rgba(0, 0, 0, 0.14));
 } // TODO: check if box shadow is now all around

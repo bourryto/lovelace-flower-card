@@ -115,7 +115,6 @@ export default class FlowerCard extends LitElement {
                                     ? this.stateObj.attributes.entity_picture
                                     : missingImage
                             }">
-                            // TODO: add hover version telling you what is wrong in a single word
                         </div>
                     </div>
                 </ha-card>
@@ -159,7 +158,7 @@ export default class FlowerCard extends LitElement {
     getCardSize(): number {
         if(this.config.display_type == DisplayType.Overview){
             return 1;
-        } // TODO: check if this actually makes it smaller
+        }
         return 5;
     }
 

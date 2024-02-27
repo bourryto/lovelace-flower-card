@@ -6,7 +6,8 @@ export const style = css`
 }
 .card-overview {
     background-color: transparent;
-} // TODO: check if it works
+    height: 100px;
+    width: 100px;
 .attributes {
   display: flex;
   white-space: nowrap;
@@ -40,8 +41,7 @@ export const style = css`
   height: 55px;
 }
 .header-overview {
-    padding-top: 4px;
-    height: 104px;
+    height: 100px;
     width: 100px;
 }
     
@@ -82,8 +82,8 @@ export const style = css`
 }
 .status-ring > img {
     border-radius: 100%;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
     box-shadow: var( --ha-card-box-shadow, 0 0 2px 2px rgba(0, 0, 0, 0.14));
 } // TODO: check if box shadow is now all around
