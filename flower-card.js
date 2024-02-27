@@ -171,6 +171,7 @@
     height: 100px;
     width: 100px;
     border-radius: 100%;
+    padding: 0;
 }
     
 .attribute .header, .attribute .header-compact{
