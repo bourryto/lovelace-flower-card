@@ -121,7 +121,7 @@
             <div class="divider"></div>
             ${(0,c.renderAttributes)(this)}
             </ha-card>
-            `}get_data(t){var e;return n(this,void 0,void 0,(function*(){try{this.plantinfo=yield t.callWS({type:"plant/get_info",entity_id:null===(e=this.config)||void 0===e?void 0:e.entity})}catch(t){this.plantinfo={result:{}}}}))}getCardSize(){return 5}static get styles(){return a.style}};r([(0,o.property)()],h.prototype,"_hass",void 0),r([(0,o.property)()],h.prototype,"config",void 0),h=r([(0,o.customElement)(u.CARD_NAME)],h),e.default=h},800:(t,e,i)=>{Object.defineProperty(e,"__esModule",{value:!0}),e.style=void 0;const r=i(399);e.style=r.css`
+            `}get_data(t){var e;return n(this,void 0,void 0,(function*(){try{this.plantinfo=yield t.callWS({type:"plant/get_info",entity_id:null===(e=this.config)||void 0===e?void 0:e.entity})}catch(t){this.plantinfo={result:{}}}}))}getCardSize(){return this.config.display_type===s.DisplayType.Overview?1:5}static get styles(){return a.style}};r([(0,o.property)()],h.prototype,"_hass",void 0),r([(0,o.property)()],h.prototype,"config",void 0),h=r([(0,o.customElement)(u.CARD_NAME)],h),e.default=h},800:(t,e,i)=>{Object.defineProperty(e,"__esModule",{value:!0}),e.style=void 0;const r=i(399);e.style=r.css`
 .card-margin-top {
   margin-top: 32px;
 }
@@ -171,7 +171,6 @@
     height: 100px;
     width: 100px;
     border-radius: 100%;
-    padding: 20px;
 }
     
 .attribute .header, .attribute .header-compact{

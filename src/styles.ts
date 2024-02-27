@@ -50,7 +50,6 @@ export const style = css`
     height: 100px;
     width: 100px;
     border-radius: 100%;
-    padding: 20px;
 }
     
 .attribute .header, .attribute .header-compact{
